@@ -13,4 +13,16 @@ public class GreetingController {
       model.addAttribute("name", name);
       return "greeting";
   }
+
+    @RequestMapping(value="/greeting", method=RequestMethod.GET)
+    public String greetingForm(Model model) {
+        model.addAttribute("greeting", new Greeting());
+        return "greeting";
+    }
+
+    @RequestMapping(value="/greeting", method=RequestMethod.POST)
+    public String greetingSubmit(@ModelAttribute Greeting greeting, Model model) {
+        model.addAttribute("greeting", greeting);
+        return "result";
+    }
 }

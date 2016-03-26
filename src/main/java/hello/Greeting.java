@@ -20,5 +20,4 @@ public class Greeting {
     public void setContent(String content) {
         this.content = content;
     }
-
 }
